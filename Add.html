@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Add.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <a id="feed" href="FeedMe.php">
+        <li class="text-logo">Feed Me</li>
+    </a>
+    <div class="container">
+        <div class="title">Ajouter une recette</div>
+        <div class="content">
+            <form action="Add.php" method="post" enctype="multipart/form-data">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Nom de la recette</span>
+                        <input type="text" placeholder="Pate bolognaise" id="name" name="name" required>
+                    </div>
+                    <div class="input-box">
+                        <div class="input-box half first">
+                            <span class="details couvert">Nombre de couverts</span>
+                            <input type="number" id="number" name="number" placeholder="2" min="1" max="20" required>
+                        </div>
+                        <div class="test half input-box">
+                            <span class="details couvert" id="cat">Choix de la catégorie</span>
+                            <select name="type" id="type" class="second type" required>
+                                <option value="">Catégorie</option>
+                                <option value="petit_dejeuner">Petit déjeuner</option>
+                                <option value="plat">Plat</option>
+                                <option value="sauce">Sauce</option>
+                                <option value="aperitif">Apéritif</option>
+                                <option value="entree">Entrée</option>
+                                <option value="dessert">Dessert</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Les ingrédients</span>
+                        <input type="text" id="ingredient" name="ingredient" placeholder="pate, sauce tomate, oignon, steak, sel" required>
+                    </div>
+                    <div class="input-box">
+                        <div class="input-box half first">
+                            <span class="details couvert">Pays d'origine</span>
+                            <input type="text" id="country" name="country" placeholder="Italie" required>
+                        </div>
+                        <div class="input-box half test">
+                            <span class="details couvert" id="cat">Prix (en €)</span>
+                            <input type="number" class="type" id="price" name="price" placeholder="20" min="1" max="1000" required>
+                        </div>
+                    </div>
+                    <div class="txt">
+                        <span class="last">Les étapes de la recette</span>
+                        <textarea type="text" id="recipe" name="recipe" placeholder="Mettez les pates à cuire dans un grand volume d'eau et pendant ce temps là, tailler en fine lamelle vos oignons, puis faites les revenir avec la viande hachée dans une poelle. Enfin, ajouter la sauce tomate et laissez réduire puis y ajouter les pates. Salez et poivrez à votre convenance."
+                            required></textarea>
+                    </div>
+                    <div class="img">
+                        <label class="last"> Ajouter une image</label>
+                        <input type="file" name="image">
+                    </div>
+                </div>
+                <div class="button" id="valider">
+                    <button type="submit" value="valider">Valider la recette</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
