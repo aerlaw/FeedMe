@@ -59,13 +59,13 @@
     <div class="container-fluid list-unstyled" id="Choix">
         <div class="row ml-4">
             <button class="col-4 text-center">
-                <?php
+                 <?php /*
                 $link = new PDO('mysql:host=localhost;dbname=feed_me', 'root', '');
                 $req = "select * from recette where categorie = petit_dejeuner";
                 $stmt = $link->prepare($req);
                 $stmt->execute();
-                $recettes = $stmt->fetchAll();
-                ?>
+                $recettes = $stmt->fetchAll(); */
+                ?> 
                 <span class="material-icons croissant">bakery_dining</span>
                 <li>Petit déjeuner</li>
             </button>
@@ -106,24 +106,48 @@
     $recettes = $stmt->fetchAll();
     ?>
     <slideshow class="titre">Les recettes</slideshow>
-    <ul>
+    <div class="container-fluid mt-3" id="recettes">
         <?php foreach ($recettes as $recette):  ?>
-            <li>
-                <ul class="end">
-                    <li>Nom de la recette : <?php echo $recette['name'] ?></li>
-                    <li>Origine du pays : <?php echo $recette['pays'] ?></li>
-                    <li>Liste des ingrédients : <?php echo $recette['ingredients']?></li>
-                    <li>La recette : <?php echo $recette['etape'] ?></li>
-                    <li>Le cout : <?php echo $recette['prix'] ?> €</li>
-                    <li>La catégorie : <?php echo $recette['categorie'] ?></li>
-                    <li>Le nombre de couvert : <?php echo $recette['couvert'] ?> personnes</li>
-                </ul>
-            </li>
+            <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top one" src="./img/<?php echo $recette['img']?>" style="width:auto;height:200px;" alt="Image card dish">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $recette['name'] ?></h5>
+                            <p class="card-text">Pays d'origine : <?php echo $recette['pays']?>
+                            <br>Prix de la recette : <?php echo $recette['prix']?> €</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Afficher la recette
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>                            
+                        </div>
+                    </div>
+            </div>
         <?php endforeach ?>
-    </ul>
+    </div>
+    
 
         <!-- Footer -->
-        <footer class="text-center">
+        <footer class="text-center mt-5">
             <p class="mt-4">Codé avec passion par moi-même</p>
             <p>Tous droits réservés Feed Me® - 2022-2023</p>
             <p>

@@ -180,3 +180,28 @@ li {
 ul li {
     color: black;
 }
+
+#recettes {
+    display: flex;
+    width: 90%;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.card-deck {
+    width: 250px !important;
+    height: 350px !important;
+    max-width: 250px !important;
+    max-height: 350px !important;
+}
+
+
+.card {
+    width: 250px !important;
+    height: 350px !important;
+}
+
+.btn-primary {
+    width: 200px;
+    margin-left: 10px;
+}
